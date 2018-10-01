@@ -1,0 +1,14 @@
+#!/bin/bash
+
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/native/usr/sbin
+
+# only run once
+if [[ -f /var/lib/bootstrap ]]; then exit 0; fi
+touch /var/lib/bootstrap
+
+# set hostname
+mdata-get sdc:hostname > /etc/hostname
+hostname $(/native/usr/sbin/mdata-get sdc:hostname)
+
+# run mdata-setup
+/usr/local/bin/mdata-setup

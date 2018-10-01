@@ -3,5 +3,50 @@
 set -o errexit
 
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+MUNIN_PLUGINS=""
+
+echo "* Activate munin plugins"
+/usr/local/bin/munin-node-plugins ${MUNIN_PLUGINS}
+
+echo "* get latest apt upgrades"
+apt-get -qq upgrade
+
+echo "* Add bash extensions"
+cat >> /etc/skel/.bashrc << EOF
+PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
+alias la="ls -al"
+alias t="cd /var/log/ && tail -n 50 -f "
+alias msg="/usr/bin/tail -n 50 -f /var/log/syslog"
+LANG=en_US.UTF-8
+LANGUAGE=en_US.UTF-8
+LC_MONETARY=de_DE.UTF-8
+LC_TIME=de_DE.UTF-8
+LC_CTYPE=de_DE.UTF-8
+LC_NUMERIC=de_DE.UTF-8
+LC_MESSAGES=C
+EDITOR=nano
+HISTSIZE=2000
+HISTFILESIZE=25000
+HISTTIMEFORMAT="[%d.%m.%Y %T] "
+EOF
+
+echo "* Add nano extensions"
+cat >> /etc/nanorc << EOF
+include "/usr/share/nano/ruby.nanorc"
+include "/usr/share/nano/sh.nanorc"
+include "/usr/share/nano/nanorc.nanorc"
+include "/usr/share/nano/html.nanorc"
+include "/usr/share/nano/css.nanorc"
+include "/usr/share/nano/javascript.nanorc"
+EOF
+
+echo "* setup bootstrap startscript"
+touch /var/lib/bootstrap
+systemctl daemon-reload
+systemctl enable /etc/systemd/system/bootstarp.service
 
 echo "* Cleaning up."
+cp /etc/skel/.bashrc /root/.bashrc
+rm /var/lib/bootstrap 2>/dev/null || true
+rm /root/.bash_history 2>/dev/null || true
+history -c

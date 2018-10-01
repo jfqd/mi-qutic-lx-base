@@ -1,0 +1,8 @@
+[Unit]
+Description=bootstrap lx-brand image
+
+[Service]
+ExecStart=/usr/local/bin/bootstrap
+
+[Install]
+WantedBy=default.target
