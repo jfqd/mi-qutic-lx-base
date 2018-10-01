@@ -9,4 +9,5 @@ if mdata-get munin_master_allow 1>/dev/null 2>&1; then
 	for allow in $(mdata-get munin_master_allow); do
 		echo "allow ^${allow//\./\\.}$" >> ${MUNIN_CONF}
 	done
+  service munin-node restart
 fi

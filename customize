@@ -43,7 +43,7 @@ EOF
 echo "* setup bootstrap startscript"
 touch /var/lib/bootstrap
 systemctl daemon-reload
-systemctl enable /etc/systemd/system/bootstarp.service
+systemctl enable /etc/systemd/system/bootstrap.service
 
 echo "* Cleaning up."
 cp /etc/skel/.bashrc /root/.bashrc
