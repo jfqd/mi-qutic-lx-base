@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+set -o errexit
+
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+echo "* Cleaning up."

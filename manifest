@@ -1,0 +1,8 @@
+name="qutic-lx-base"
+organization="qutic development"
+brand="Instance"
+version="20180404.1"
+description="qutic lx-base image"
+homepage="https://github.com/jfqd/mi-qutic-lx-base"
+users="root admin"
+base="63d6e664-3f1f-11e8-aef6-a3120cf8dd9d"
