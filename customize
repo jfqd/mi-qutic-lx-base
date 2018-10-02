@@ -36,13 +36,17 @@ include "/usr/share/nano/css.nanorc"
 include "/usr/share/nano/javascript.nanorc"
 EOF
 
+echo "* Setup language env"
+cp /etc/skel/.bashrc /root/.bashrc
+source /root/.bashrc
+locale-gen en_US.UTF-8
+
 echo "* setup bootstrap startscript"
 touch /var/lib/bootstrap
 systemctl daemon-reload
 systemctl enable /etc/systemd/system/bootstrap.service
 
 echo "* Cleaning up."
-cp /etc/skel/.bashrc /root/.bashrc
 rm /var/lib/bootstrap 2>/dev/null || true
 rm /root/.bash_history 2>/dev/null || true
 history -c
