@@ -21,8 +21,8 @@ EDITOR=nano
 HISTSIZE=2000
 HISTFILESIZE=25000
 HISTTIMEFORMAT="[%d.%m.%Y %T] "
-export LANGUAGE=en_US.UTF-8
-export LANG=en_US.UTF-8
+export LANGUAGE=en_US.utf8
+export LANG=en_US.utf8
 EOF
 
 echo "* Add nano extensions"

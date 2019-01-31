@@ -7,8 +7,8 @@ if [[ -f /var/lib/bootstrap ]]; then exit 0; fi
 touch /var/lib/bootstrap
 
 # set hostname
-mdata-get sdc:hostname > /etc/hostname
-hostname $(/native/usr/sbin/mdata-get sdc:hostname)
+# mdata-get sdc:hostname > /etc/hostname
+# hostname $(/native/usr/sbin/mdata-get sdc:hostname)
 
 # run mdata-setup
 /usr/local/bin/mdata-setup
