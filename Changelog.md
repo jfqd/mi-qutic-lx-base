@@ -4,6 +4,7 @@
 
 * include nagios-nrpe-server
 * fix exim4 config
+* add nrpe config
 
 ## 20180404.2
 
