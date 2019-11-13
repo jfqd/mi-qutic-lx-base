@@ -1,0 +1,10 @@
+#!/bin/bash
+
+SERVICES=$(/bin/systemctl list-unit-files --type=service --state=failed --plain | /usr/bin/tail -n +2 | /usr/bin/head -n -2 | /usr/bin/awk '{ print $1 }')
+
+for service in $SERVICES; do
+  /bin/systemctl start "$process"
+  /bin/echo "start $process after failed state"
+done
+
+exit 0
