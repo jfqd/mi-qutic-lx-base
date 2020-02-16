@@ -3,9 +3,3 @@ man
 apt-transport-https
 exim4-base
 screen
-# monitoring
-# munin-plugins-core
-# munin-plugins-extra
-# munin-node
-# nagios-nrpe-plugin
-# nagios-nrpe-server
