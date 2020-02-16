@@ -1,5 +1,12 @@
 # Changelog
 
+## 20180404.4
+
+* add systemd health-check
+* fix exim config
+* remove nagios and munin
+* add zabbix-agent
+
 ## 20180404.3
 
 * include nagios-nrpe-server

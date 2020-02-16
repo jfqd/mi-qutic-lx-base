@@ -3,13 +3,19 @@
 set -o errexit
 
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-MUNIN_PLUGINS=""
 
-echo "* Activate munin plugins"
-/usr/local/bin/munin-node-plugins ${MUNIN_PLUGINS}
+ZABBIX_VERSION="4.0"
 
 echo "* get latest apt upgrades"
 apt-get -qq upgrade
+
+echo "* Install zabbix-agent"
+wget https://download.qutic.com/src/zabbix/zabbix-release_${ZABBIX_VERSION}-3+stretch_all.deb
+dpkg -i zabbix-release_${ZABBIX_VERSION}-3+stretch_all.deb
+apt-get -y update
+apt-get -y install zabbix-agent
+mkdir /var/log/zabbix
+chown zabbix:zabbix /var/log/zabbix
 
 echo "* Add bash extensions"
 cat >> /etc/skel/.bashrc << EOF
