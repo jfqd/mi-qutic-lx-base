@@ -11,10 +11,10 @@ if mdata-get zabbix_pski 1>/dev/null 2>&1; then
     chown zabbix:zabbix /etc/zabbix/zabbix_agentd.psk
 
     sed -i \
-        -e "s|# TLSAccept=unencrypted|TLSAccept=psk" \
+        -e "s|# TLSAccept=unencrypted|TLSAccept=psk|" \
         -e "s|# TLSConnect=unencrypted|TLSConnect=psk|" \
         -e "s|# TLSPSKIdentity=|TLSPSKIdentity=${PSKI}|" \
-        -e "s|# TLSPSKFile=|TLSPSKFile=/etc/zabbix/zabbix_agentd.psk" \
+        -e "s|# TLSPSKFile=|TLSPSKFile=/etc/zabbix/zabbix_agentd.psk|" \
         /etc/zabbix/zabbix_agentd.conf
 
   fi

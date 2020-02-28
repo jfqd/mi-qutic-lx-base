@@ -16,6 +16,7 @@ apt-get -y update
 apt-get -y install zabbix-agent
 mkdir /var/log/zabbix
 chown zabbix:zabbix /var/log/zabbix
+mkdir /etc/zabbix/zabbix_agentd.conf.d
 
 echo "* Add bash extensions"
 cat >> /etc/skel/.bashrc << EOF
