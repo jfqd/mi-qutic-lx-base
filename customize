@@ -14,9 +14,9 @@ wget https://download.qutic.com/src/zabbix/zabbix-release_${ZABBIX_VERSION}-3+st
 dpkg -i zabbix-release_${ZABBIX_VERSION}-3+stretch_all.deb
 apt-get -y update
 apt-get -y install zabbix-agent
-mkdir /var/log/zabbix
+mkdir /var/log/zabbix || true
 chown zabbix:zabbix /var/log/zabbix
-mkdir /etc/zabbix/zabbix_agentd.conf.d
+mkdir /etc/zabbix/zabbix_agentd.conf.d || true
 
 echo "* Add bash extensions"
 cat >> /etc/skel/.bashrc << EOF
