@@ -9,14 +9,23 @@ ZABBIX_VERSION="4.0"
 echo "* get latest apt upgrades"
 apt-get -qq upgrade
 
-echo "* Install zabbix-agent"
-wget https://download.qutic.com/src/zabbix/zabbix-release_${ZABBIX_VERSION}-3+stretch_all.deb
-dpkg -i zabbix-release_${ZABBIX_VERSION}-3+stretch_all.deb
-apt-get -y update
-apt-get -y install zabbix-agent
-mkdir /var/log/zabbix || true
-chown zabbix:zabbix /var/log/zabbix
-mkdir /etc/zabbix/zabbix_agentd.conf.d || true
+# skip zabbix-agent install on debian 10 cause of issues
+if [[ $(lsb_release --release |awk '{print $2}') -lt 10 ]]; then
+  echo "* Install zabbix-agent"
+  export DEBIAN_FRONTEND=noninteractive
+  wget https://download.qutic.com/src/zabbix/zabbix-release_${ZABBIX_VERSION}-3+stretch_all.deb
+  dpkg -i zabbix-release_${ZABBIX_VERSION}-3+stretch_all.deb
+  apt-get -y update
+  apt-get -y install zabbix-agent || true
+  mkdir -p /var/log/zabbix || true
+  chown zabbix:zabbix /var/log/zabbix
+  mkdir -p /etc/zabbix/zabbix_agentd.conf.d || true
+fi
+
+echo "* Add dtrace tools"
+curl -sSLO https://download.qutic.com/src/joyent/dtracetools-lx_1.0_amd64.deb
+dpkg -i dtracetools-lx_1.0_amd64.deb
+rm dtracetools-lx_1.0_amd64.deb
 
 echo "* Add bash extensions"
 cat >> /etc/skel/.bashrc << EOF
