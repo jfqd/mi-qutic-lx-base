@@ -1,5 +1,10 @@
 # Changelog
 
+## 20200713.0
+
+* switch to debian 10
+* add dtrace tools
+
 ## 20180404.4
 
 * add systemd health-check
