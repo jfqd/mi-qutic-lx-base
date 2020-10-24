@@ -54,7 +54,8 @@ EOF
 echo "* Setup language env"
 cp /etc/skel/.bashrc /root/.bashrc
 source /root/.bashrc
-locale-gen en_US.utf8
+locale-gen --purge en_US.UTF-8
+# locale-gen en_US.utf8
 
 echo "* setup bootstrap startscript"
 touch /var/lib/bootstrap
