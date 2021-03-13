@@ -1,11 +1,11 @@
 {
   "name":         "qutic-lx-base",
-  "version":      "20200713.0",
+  "version":      "20180404.5",
   "description":  "qutic lx-base image",
   "organization": "qutic development",
   "brand":        "Instance",
   "homepage":     "https://github.com/jfqd/mi-qutic-lx-base",
-  "base":         "a31d8be6-c543-11ea-9979-439650087d97",
+  "base":         "63d6e664-3f1f-11e8-aef6-a3120cf8dd9d",
   "customer_metadata": {
     "admin_authorized_keys": {"type": "text", "description": "SSH public authorized key(s) for the admin user"},
     "root_authorized_keys":  {"type": "text", "description": "SSH public authorized key(s) for the root user"},

@@ -1,5 +1,11 @@
 # Changelog
 
+## 20180404.5
+
+* revert to debian 9 for now
+* fix locale-gen call
+* add basic uptodate script
+
 ## 20200713.0
 
 * switch to debian 10
