@@ -5,6 +5,7 @@
 * revert to debian 9 for now
 * fix locale-gen call
 * add basic uptodate script
+* add change-cert script
 
 ## 20200713.0
 
