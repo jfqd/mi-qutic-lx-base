@@ -1,6 +1,6 @@
 {
   "name":         "qutic-lx-base",
-  "version":      "20180404.5",
+  "version":      "20180404.6",
   "description":  "qutic lx-base image",
   "organization": "qutic development",
   "brand":        "Instance",

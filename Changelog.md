@@ -1,5 +1,10 @@
 # Changelog
 
+## 20180404.6
+
+* fix ntp error messages
+* add noninteractive to update script
+
 ## 20180404.5
 
 * revert to debian 9 for now
