@@ -68,6 +68,7 @@ sed -i \
 
 cat >> /etc/ntp.conf << EOF
 
+# local clock = 127.127.1.0
 server  127.127.1.0 prefer
 
 EOF
