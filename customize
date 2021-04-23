@@ -7,6 +7,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ZABBIX_VERSION="4.0"
 
 echo "* get latest apt upgrades"
+apt-get -y update
 apt-get -qq upgrade
 
 # skip zabbix-agent install on debian 10 cause of issues
@@ -56,6 +57,20 @@ cp /etc/skel/.bashrc /root/.bashrc
 source /root/.bashrc
 locale-gen --purge en_US.UTF-8
 # locale-gen en_US.utf8
+
+echo "* Fix ntp error messages"
+sed -i \
+    -e "s/pool 0.debian.pool.ntp.org iburst/#pool 0.debian.pool.ntp.org iburst/" \
+    -e "s/pool 1.debian.pool.ntp.org iburst/#pool 1.debian.pool.ntp.org iburst/" \
+    -e "s/pool 2.debian.pool.ntp.org iburst/#pool 2.debian.pool.ntp.org iburst/" \
+    -e "s/pool 3.debian.pool.ntp.org iburst/#pool 3.debian.pool.ntp.org iburst/" \
+    /etc/ntp.conf
+
+cat >> /etc/ntp.conf << EOF
+
+server  127.127.1.0 prefer
+
+EOF
 
 echo "* setup bootstrap startscript"
 touch /var/lib/bootstrap
