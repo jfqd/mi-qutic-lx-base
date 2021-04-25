@@ -38,8 +38,8 @@ EDITOR=nano
 HISTSIZE=2000
 HISTFILESIZE=25000
 HISTTIMEFORMAT="[%d.%m.%Y %T] "
-export LANGUAGE=en_US.utf8
-export LANG=en_US.utf8
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
 EOF
 
 echo "* Add nano extensions"
@@ -55,8 +55,7 @@ EOF
 echo "* Setup language env"
 cp /etc/skel/.bashrc /root/.bashrc
 source /root/.bashrc
-locale-gen --purge en_US.UTF-8
-# locale-gen en_US.utf8
+locale-gen en_US.utf8
 
 echo "* Fix ntp error messages"
 sed -i \
