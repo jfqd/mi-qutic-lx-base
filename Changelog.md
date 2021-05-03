@@ -1,5 +1,10 @@
 # Changelog
 
+## 20210413.0
+
+* switch to ubuntu 20.04
+
+
 ## 20180404.6
 
 * fix ntp error messages
