@@ -13,7 +13,7 @@ apt-get -qq upgrade
 echo "* Install zabbix-agent"
 export DEBIAN_FRONTEND=noninteractive
 wget "https://repo.zabbix.com/zabbix/${ZABBIX_VERSION}/ubuntu/pool/main/z/zabbix-release/zabbix-release_${ZABBIX_VERSION}-3+focal_all.deb"
-dpkg -i dpkg -i "zabbix-release_${ZABBIX_VERSION}-3+focal_all.deb"
+/usr/bin/dpkg -i "zabbix-release_${ZABBIX_VERSION}-3+focal_all.deb"
 apt-get -y update
 apt-get -y install zabbix-agent || true
 mkdir -p /var/log/zabbix || true
