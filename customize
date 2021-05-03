@@ -22,9 +22,6 @@ mkdir -p /etc/zabbix/zabbix_agentd.conf.d || true
 sed -i \
     "s|PIDFile=/run/zabbix/zabbix_agentd.pid|#PIDFile=/run/zabbix/zabbix_agentd.pid|" \
     /lib/systemd/system/zabbix-agent.service
-sed -i \
-    "s|PIDFile=/run/zabbix/zabbix_agentd.pid|#PIDFile=/run/zabbix/zabbix_agentd.pid|" \
-    /etc/systemd/system/zabbix-agent.service
 
 echo "* Add dtrace tools"
 curl -sSLO https://download.qutic.com/src/joyent/dtracetools-lx_1.0_amd64.deb
