@@ -1,5 +1,6 @@
 # basic stuff
-man
+man-db
 apt-transport-https
-exim4-base
+exim4
 screen
+rsyslog

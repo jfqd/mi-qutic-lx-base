@@ -19,7 +19,7 @@ if /native/usr/sbin/mdata-get mail_smarthost 1>/dev/null 2>&1; then
     /etc/exim4/update-exim4.conf.conf
 fi
 
-sed -i "s:dc_other_hostnames='debian-8-01':dc_other_hostnames='$(/bin/echo -n `/bin/hostname -f`)':" \
+sed -i "s:dc_other_hostnames='debian-8-01':dc_other_hostnames='$(/usr/bin/echo -n `/bin/hostname -f`)':" \
   /etc/exim4/update-exim4.conf.conf
 
 # cleanup /etc/hosts

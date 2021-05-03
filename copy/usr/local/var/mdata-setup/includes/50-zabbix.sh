@@ -16,7 +16,6 @@ if mdata-get zabbix_pski 1>/dev/null 2>&1; then
         -e "s|# TLSPSKIdentity=|TLSPSKIdentity=${PSKI}|" \
         -e "s|# TLSPSKFile=|TLSPSKFile=/etc/zabbix/zabbix_agentd.psk|" \
         /etc/zabbix/zabbix_agentd.conf
-
   fi
 fi
 
