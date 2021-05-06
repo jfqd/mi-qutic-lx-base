@@ -1,5 +1,9 @@
 # Changelog
 
+## 20210413.1
+
+* include cron package
+
 ## 20210413.0
 
 * switch to ubuntu 20.04

@@ -49,8 +49,12 @@ source /root/.bashrc
 # locale-gen en_US.utf8
 
 echo "* Start rsyslog"
-systemctl enable rsyslog
-systemctl start rsyslog
+sed -i "s|#cron|cron|" /etc/rsyslog.d/50-default.conf
+systemctl enable --now rsyslog
+
+echo "* Start cron and anacron"
+systemctl enable --now cron
+systemctl enable --now anacron
 
 echo "* setup bootstrap startscript"
 touch /var/lib/bootstrap
@@ -60,4 +64,5 @@ systemctl enable /etc/systemd/system/bootstrap.service
 echo "* Cleaning up."
 rm /var/lib/bootstrap 2>/dev/null || true
 rm /root/.bash_history 2>/dev/null || true
+rm "/root/zabbix-release_${ZABBIX_VERSION}-3+focal_all.deb"
 history -c
