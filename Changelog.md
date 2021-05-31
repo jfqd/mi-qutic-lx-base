@@ -3,6 +3,7 @@
 ## 20210413.1
 
 * include cron package
+* fix zabbix config overwrite question
 
 ## 20210413.0
 
