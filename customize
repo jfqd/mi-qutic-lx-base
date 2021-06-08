@@ -56,7 +56,27 @@ echo "* Start cron and anacron"
 systemctl enable --now cron
 systemctl enable --now anacron
 
-echo "* setup bootstrap startscript"
+echo "* System config"
+cat >> /etc/sysctl.conf << EOF
+
+fs.file-max = 2097152
+fs.nr_open = 1048576
+
+net.ipv4.netfilter.ip_conntrack_max = 1048576
+net.nf_conntrack_max = 1048576
+net.core.somaxconn = 1048576
+
+EOF
+cat >> /etc/security/limits.conf << EOF
+
+*    soft nofile 1048576
+*    hard nofile 1048576
+root soft nofile 1048576
+root hard nofile 1048576
+
+EOF
+
+echo "* Setup bootstrap startscript"
 touch /var/lib/bootstrap
 systemctl daemon-reload
 systemctl enable /etc/systemd/system/bootstrap.service
