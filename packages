@@ -6,3 +6,4 @@ screen
 rsyslog
 cron
 anacron
+nfs-common
