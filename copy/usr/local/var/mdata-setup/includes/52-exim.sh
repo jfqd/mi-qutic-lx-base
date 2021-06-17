@@ -28,4 +28,4 @@ sed -i '/ip6-allrouter/d' /etc/hosts
 sed -i '/mibe-lx-basic.qutic.net/d' /etc/hosts
 
 hostname > /etc/mailname
-service exim4 restart
+systemctl restart exim4

@@ -1,6 +1,6 @@
 {
   "name":         "qutic-lx-base",
-  "version":      "20210413.1",
+  "version":      "20210413.2",
   "description":  "qutic lx-base image",
   "organization": "qutic development",
   "brand":        "Instance",
@@ -24,6 +24,6 @@
     "zabbix_pski":           {"type": "text", "description": "zabbix PSKIdentity"},
     "zabbix_psk":            {"type": "text", "description": "zabbix PSK"},
     "logstash_redis":        {"type": "text", "description": "ip addresses of the logstash redis nodes, seperated by comma and including redis-protocoll"},
-    "vfstab":                {"type": "text", "description": "nfs mountpoint for vfstab-file"}
+    "vfstab":                {"type": "text", "description": "nfs mountpoint for fstab-file, like: 10.10.10.10:rpool/mail /var/mail nfs rw 0 0"}
   }
 }

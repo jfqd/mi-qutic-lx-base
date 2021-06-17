@@ -1,5 +1,12 @@
 # Changelog
 
+## 20210413.2
+
+* increase system limits
+* add fstab mount script
+* include package for nfs mount
+* set system-editor
+
 ## 20210413.1
 
 * include cron package

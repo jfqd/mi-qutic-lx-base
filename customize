@@ -35,10 +35,11 @@ alias la="ls -Al"
 alias t="cd /var/log/ && tail -n 50 -f "
 alias msg="/usr/bin/tail -n 50 -f /var/log/syslog"
 alias nano=vim
-EDITOR=vim
 HISTSIZE=2000
 HISTFILESIZE=25000
 HISTTIMEFORMAT="[%d.%m.%Y %T] "
+export EDITOR=vim
+export SYSTEMD_EDITOR=vim
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 EOF
