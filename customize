@@ -76,7 +76,7 @@ root soft nofile 1048576
 root hard nofile 1048576
 
 EOF
-sysctl -p
+sysctl -p || true
 
 echo "* Setup bootstrap startscript"
 touch /var/lib/bootstrap
