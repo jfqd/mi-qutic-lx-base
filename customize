@@ -7,11 +7,11 @@ PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ZABBIX_VERSION="4.0"
 
 echo "* get latest apt upgrades"
+export DEBIAN_FRONTEND=noninteractive
 apt-get -y update
 apt-get -qq upgrade
 
 echo "* Install zabbix-agent"
-export DEBIAN_FRONTEND=noninteractive
 wget "https://repo.zabbix.com/zabbix/${ZABBIX_VERSION}/ubuntu/pool/main/z/zabbix-release/zabbix-release_${ZABBIX_VERSION}-3+focal_all.deb"
 /usr/bin/dpkg -i "zabbix-release_${ZABBIX_VERSION}-3+focal_all.deb"
 apt-get -y update
@@ -77,6 +77,11 @@ root hard nofile 1048576
 
 EOF
 sysctl -p || true
+
+sed -i \
+  -e "s/#SystemMaxUse=/SystemMaxUse=200M/" \
+  -e "s/#MaxFileSec=1month/MaxFileSec=1month/" \
+  /etc/systemd/journald.conf
 
 echo "* Setup bootstrap startscript"
 touch /var/lib/bootstrap
