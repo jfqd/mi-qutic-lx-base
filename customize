@@ -28,6 +28,10 @@ curl -sSLO https://download.qutic.com/src/joyent/dtracetools-lx_1.0_amd64.deb
 /usr/bin/dpkg -i dtracetools-lx_1.0_amd64.deb
 rm dtracetools-lx_1.0_amd64.deb
 
+echo "* Add filebeats"
+curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-6.8.22-amd64.deb
+dpkg -i filebeat-6.8.22-amd64.deb
+
 echo "* Add bash extensions"
 cat >> /etc/skel/.bashrc << EOF
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
