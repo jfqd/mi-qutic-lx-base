@@ -9,7 +9,7 @@ ZABBIX_VERSION="4.0"
 echo "* get latest apt upgrades"
 export DEBIAN_FRONTEND=noninteractive
 apt-get -y update
-apt-get -qq upgrade
+yes no | apt-get -qq upgrade
 
 echo "* Install zabbix-agent"
 wget "https://repo.zabbix.com/zabbix/${ZABBIX_VERSION}/ubuntu/pool/main/z/zabbix-release/zabbix-release_${ZABBIX_VERSION}-3+focal_all.deb"
