@@ -1,5 +1,11 @@
 # Changelog
 
+## 20210413.3
+
+* add ps-cpu and -mem aliases
+* limit systemd log file size
+* add filebeats
+
 ## 20210413.2
 
 * increase system limits

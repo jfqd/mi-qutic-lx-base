@@ -1,7 +1,7 @@
 name="qutic-lx-base"
 organization="qutic development"
 brand="Instance"
-version="20210413.2"
+version="20210413.3"
 description="qutic lx-base image"
 homepage="https://github.com/jfqd/mi-qutic-lx-base"
 users="root admin"
