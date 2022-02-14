@@ -38,13 +38,13 @@ PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
 alias la="ls -Al"
 alias t="cd /var/log/ && tail -n 50 -f "
 alias msg="/usr/bin/tail -n 50 -f /var/log/syslog"
-alias nano=vim
+alias nano=/usr/bin/vim
 alias ps-mem="ps -o pid,user,%mem,command ax | sort -b -k3 -r | head"
 alias ps-cpu="ps -o pid,user,%cpu,command ax | sort -b -k3 -r | head"
 HISTSIZE=2000
 HISTFILESIZE=25000
 HISTTIMEFORMAT="[%d.%m.%Y %T] "
-export EDITOR=vim
+export EDITOR=/usr/bin/vim
 export SYSTEMD_EDITOR=vim
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -84,6 +84,7 @@ root hard nofile 1048576
 EOF
 sysctl -p || true
 
+# journalctl --vacuum-size=200M
 sed -i \
   -e "s/#SystemMaxUse=/SystemMaxUse=200M/" \
   -e "s/#MaxFileSec=1month/MaxFileSec=1month/" \
