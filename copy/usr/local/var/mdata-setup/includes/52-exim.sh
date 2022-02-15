@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 if /native/usr/sbin/mdata-get mail_smarthost 1>/dev/null 2>&1; then
   if /native/usr/sbin/mdata-get mail_adminaddr 1>/dev/null 2>&1; then
     echo "root: $(/native/usr/sbin/mdata-get mail_adminaddr)" >> /etc/aliases

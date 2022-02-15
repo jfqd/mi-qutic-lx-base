@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 if mdata-get zabbix_pski 1>/dev/null 2>&1; then
   PSKI=$(mdata-get zabbix_pski)

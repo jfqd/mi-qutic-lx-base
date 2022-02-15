@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 HOSTNAME=$(/usr/bin/hostname)
 sed -i \

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 if /native/usr/sbin/mdata-get sdc:hostname 1>/dev/null 2>&1; then
   HOSTNAME=$(/native/usr/sbin/mdata-get sdc:hostname)
