@@ -19,13 +19,6 @@ apt-get -y install zabbix-agent || true
 mkdir -p /var/log/zabbix || true
 chown zabbix:zabbix /var/log/zabbix
 mkdir -p /etc/zabbix/zabbix_agentd.conf.d || true
-sed -i \
-    "s|PIDFile=/run/zabbix/zabbix_agentd.pid|#PIDFile=/run/zabbix/zabbix_agentd.pid|" \
-    /etc/systemd/system/zabbix-agent.service
-sed -i \
-    "s|PIDFile=/run/zabbix/zabbix_agentd.pid|#PIDFile=/run/zabbix/zabbix_agentd.pid|" \
-    /lib/systemd/system/zabbix-agent.service
-systemctl daemon-reload
 
 # sed -i \
 #     "s|||" \

@@ -1,5 +1,18 @@
 #!/usr/bin/bash
 
+
+if [[ -f /etc/systemd/system/zabbix-agent.service ]]; then
+  sed -i \
+      "s|PIDFile=/run/zabbix/zabbix_agentd.pid|#PIDFile=/run/zabbix/zabbix_agentd.pid|" \
+      /etc/systemd/system/zabbix-agent.service
+fi
+if [[ -f /lib/systemd/system/zabbix-agent.service ]]; then
+  sed -i \
+      "s|PIDFile=/run/zabbix/zabbix_agentd.pid|#PIDFile=/run/zabbix/zabbix_agentd.pid|" \
+      /lib/systemd/system/zabbix-agent.service
+fi
+systemctl daemon-reload
+
 if mdata-get zabbix_pski 1>/dev/null 2>&1; then
   PSKI=$(mdata-get zabbix_pski)
 
