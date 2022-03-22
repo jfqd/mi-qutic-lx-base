@@ -1,0 +1,4 @@
+#!/bin/bash
+
+DEBIAN_FRONTEND=noninteractive
+/usr/bin/yes no | /usr/bin/apt-get $@

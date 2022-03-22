@@ -1,3 +1,0 @@
-#!/bin/bash
-
-/usr/bin/yes no | /usr/bin/apt-get -qq install $@
