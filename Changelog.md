@@ -1,5 +1,11 @@
 # Changelog
 
+## 20210413.4
+
+* load from filebeats own server
+* fix update to latest
+* ensure zabbix without PID file
+
 ## 20210413.3
 
 * add ps-cpu and -mem aliases
