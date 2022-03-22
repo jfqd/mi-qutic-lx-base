@@ -2,7 +2,7 @@
 
 ## 20210413.4
 
-* load from filebeats own server
+* load filebeats from own server
 * fix update to latest
 * ensure zabbix without PID file
 
