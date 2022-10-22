@@ -2,8 +2,8 @@
 
 HOSTNAME=$(/usr/bin/hostname)
 sed -i \
-    "s/host.example.com/${HOSTNAME}/" \
-    "s/mibe-lx-basic.qutic.net/${HOSTNAME}/" \
+    -e "s/host.example.com/${HOSTNAME}/" \
+    -e "s/mibe-lx-basic.qutic.net/${HOSTNAME}/" \
     /etc/filebeat/filebeat.yml
 
 if mdata-get logstash_redis 1>/dev/null 2>&1; then
