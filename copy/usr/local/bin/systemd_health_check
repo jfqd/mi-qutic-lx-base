@@ -1,9 +1,12 @@
 #!/bin/bash
 
+PATH=/usr/sbin:/usr/bin:/sbin:/bin
+
 FAILED_SERVICES=$(/usr/bin/systemctl list-unit-files --type=service --state=failed --plain | /usr/bin/tail -n +2 | /usr/bin/head -n -2 | /usr/bin/awk '{ print $1 }')
 for service in $FAILED_SERVICES; do
-  /usr/bin/systemctl start "$service"
-  /usr/bin/echo "start $service after failed state (1)"
+  systemctl reset-failed "$service"
+  systemctl start "$service"
+  echo "start $service after failed state (1)"
 done
 
 ENABLED_SERVICES=$(/usr/bin/systemctl list-unit-files --type=service --state=enabled --plain | /usr/bin/tail -n +2 | /usr/bin/head -n -2 | /usr/bin/awk '{ print $1 }')
@@ -12,8 +15,9 @@ for service in $ENABLED_SERVICES; do
     /usr/bin/echo "skip $service including an @-sign" > /dev/null
   else
     if [[ `/usr/bin/systemctl status "$service" | /usr/bin/grep "Active: " | /usr/bin/awk '{print $2}'` = "failed" ]]; then
-      /usr/bin/systemctl start "$service"
-      /usr/bin/echo "start $service after failed state (2)"
+      systemctl reset-failed "$service"
+      systemctl start "$service"
+      echo "start $service after failed state (2)"
     fi
   fi
 done
