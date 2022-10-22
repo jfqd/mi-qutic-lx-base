@@ -1,30 +1,37 @@
 # Changelog
 
-## 20210413.4
+## 20210413.5 - 2022-10-22
+
+* change build hostname too
+* fix exim config
+* add apt-get-install wrapper
+* move zabbix-sed into mdata-setup
+
+## 20210413.4 - 2022-03-22
 
 * load filebeats from own server
 * fix update to latest
 * ensure zabbix without PID file
 
-## 20210413.3
+## 20210413.3 - 2022-01-20
 
 * add ps-cpu and -mem aliases
 * limit systemd log file size
 * add filebeats
 
-## 20210413.2
+## 20210413.2 - 2021-06-17
 
 * increase system limits
 * add fstab mount script
 * include package for nfs mount
 * set system-editor
 
-## 20210413.1
+## 20210413.1 - 2021-05-31
 
 * include cron package
 * fix zabbix config overwrite question
 
-## 20210413.0
+## 20210413.0 - 2022-05-03
 
 * switch to ubuntu 20.04
 
