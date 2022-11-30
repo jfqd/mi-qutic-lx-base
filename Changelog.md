@@ -1,5 +1,9 @@
 # Changelog
 
+## 20210413.6 - 2022-11-30
+
+* migrate to postfix
+
 ## 20210413.5 - 2022-10-22
 
 * change build hostname too
