@@ -1,7 +1,8 @@
 # basic stuff
 man-db
 apt-transport-https
-exim4
+libsasl2-modules
+postfix
 screen
 rsyslog
 cron
