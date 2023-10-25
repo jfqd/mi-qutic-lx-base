@@ -1,5 +1,10 @@
 # Changelog
 
+## 20230721.0 - 2023-10-25
+
+* switch to ubuntu 22.04
+* use latest base image
+
 ## 20210413.6 - 2022-11-30
 
 * migrate to postfix
