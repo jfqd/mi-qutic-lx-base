@@ -103,5 +103,5 @@ systemctl enable /etc/systemd/system/bootstrap.service
 echo "* Cleaning up."
 rm /var/lib/bootstrap 2>/dev/null || true
 rm /root/.bash_history 2>/dev/null || true
-rm "/root/zabbix-*" || true
+rm -rf "/root/zabbix-*" || true
 history -c
