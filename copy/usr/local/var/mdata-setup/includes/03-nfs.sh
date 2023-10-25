@@ -13,4 +13,7 @@ EOF
     /usr/bin/mkdir -p "$MOUNTPOINT"
     /usr/bin/mount "$MOUNTPOINT" || true
   fi
+  
+  systemctl start rpcbind.service
+  systemctl enable rpcbind.service
 fi
