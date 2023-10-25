@@ -103,5 +103,5 @@ systemctl enable /etc/systemd/system/bootstrap.service
 echo "* Cleaning up."
 rm /var/lib/bootstrap 2>/dev/null || true
 rm /root/.bash_history 2>/dev/null || true
-rm "/root/zabbix-release_${ZABBIX_VERSION}-3+focal_all.deb"
+rm "/root/zabbix-release_*.deb"
 history -c
