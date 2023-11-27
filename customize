@@ -21,10 +21,7 @@ apt-get -y install zabbix-agent || true
 mkdir -p /var/log/zabbix || true
 chown zabbix:zabbix /var/log/zabbix
 mkdir -p /etc/zabbix/zabbix_agentd.conf.d || true
-
-# sed -i \
-#     "s|||" \
-#     /usr/lib/systemd/system/rpc-statd.service
+rm -rf "zabbix-release_${ZABBIX_VERSION}-4+ubuntu22.04_all.deb" || true
 
 echo "* Add dtrace tools"
 curl -sSLO https://download.qutic.com/src/joyent/dtracetools-lx_1.0_amd64.deb
