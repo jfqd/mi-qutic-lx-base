@@ -1,5 +1,10 @@
 # Changelog
 
+## 20231121.1 - 2024-07-02
+
+* add optional ipv6 route-option
+* add mail-adminaddr to aliases
+
 ## 20231121.0 - 2024-07-02
 
 * disable ssh and rpcbind services
