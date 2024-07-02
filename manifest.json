@@ -24,6 +24,7 @@
     "zabbix_pski":           {"type": "text", "description": "zabbix PSKIdentity"},
     "zabbix_psk":            {"type": "text", "description": "zabbix PSK"},
     "logstash_redis":        {"type": "text", "description": "ip addresses of the logstash redis nodes, seperated by comma and including redis-protocoll"},
-    "vfstab":                {"type": "text", "description": "nfs mountpoint for fstab-file, like: 10.10.10.10:rpool/mail /var/mail nfs rw 0 0"}
+    "vfstab":                {"type": "text", "description": "nfs mountpoint for fstab-file, like: 10.10.10.10:rpool/mail /var/mail nfs rw 0 0"},
+    "ipv6_route":            {"type": "text", "description": "ipv6-route if not provided via dhcp"}
   }
 }
