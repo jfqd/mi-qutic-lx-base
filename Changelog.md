@@ -1,5 +1,12 @@
 # Changelog
 
+## 20231121.0 - 2024-07-02
+
+* disable ssh and rpcbind services
+* include mailutils package
+* cleanup zabbix package
+* use latest base image
+
 ## 20230721.0 - 2023-10-25
 
 * switch to ubuntu 22.04
