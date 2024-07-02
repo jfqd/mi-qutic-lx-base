@@ -8,3 +8,4 @@ rsyslog
 cron
 anacron
 nfs-common
+mailutils
