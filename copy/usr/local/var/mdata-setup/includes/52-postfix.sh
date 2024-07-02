@@ -9,6 +9,7 @@ HOSTNAME=$(hostname)
 RELAYHOST="$(/native/usr/sbin/mdata-get mail_smarthost)"
 USERNAME="$(/native/usr/sbin/mdata-get mail_auth_user)"
 PASSWORD="$(/native/usr/sbin/mdata-get mail_auth_pass)"
+REPORTMAIL="$(/native/usr/sbin/mdata-get mail_adminaddr)"
 
 hostname > /etc/mailname
 
@@ -77,3 +78,6 @@ postmap /etc/postfix/sasl_passwd
 systemctl enable postfix
 systemctl start postfix
 systemctl status postfix
+
+echo "root:    ${REPORTMAIL}" >> /etc/aliases
+newaliases
