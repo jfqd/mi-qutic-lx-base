@@ -1,5 +1,10 @@
 # Changelog
 
+## 20250407.1 - 2025-07-18
+
+* use latest debian 12 image
+* add wget package for debian
+
 ## 20231121.1 - 2024-07-02
 
 * add optional ipv6 route-option
