@@ -9,3 +9,4 @@ cron
 anacron
 nfs-common
 mailutils
+wget
