@@ -58,7 +58,10 @@ source /root/.bashrc
 locale-gen en_US.utf8 || true
 
 echo "* Start rsyslog"
-sed -i "s|#cron|cron|" /etc/rsyslog.d/50-default.conf
+if [[ -f /etc/rsyslog.d/50-default.conf ]]; then
+  # ubuntu
+  sed -i "s|#cron|cron|" /etc/rsyslog.d/50-default.conf
+fi
 systemctl enable --now rsyslog
 
 echo "* Start cron and anacron"
