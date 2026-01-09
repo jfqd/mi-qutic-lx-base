@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 # source all files from /usr/local/var/mdata-setup/includes/*.sh
 # we recommend a order by NUMBER-scriptname.sh
 
