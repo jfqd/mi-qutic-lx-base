@@ -1,0 +1,14 @@
+#!/usr/bin/bash
+# svcs
+
+if [[ -z "$1" || "$1" = "-a" ]]; then
+  systemctl list-units --type=service --all | grep .service | grep -v not-found
+fi
+
+if [[ "$1" = "-L" ]]; then
+  if [[ -z "$2" ]]; then
+    echo "svcs -L <service-name> - empty service-name!"
+    exit 1
+  fi
+  journalctl -r -n 1 -o json-pretty -u "$2"
+fi
