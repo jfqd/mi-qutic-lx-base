@@ -1,5 +1,11 @@
 # Changelog
 
+## 20250407.2 - 2026-05-12
+
+* fix bash path
+* revert to ubuntu, use 24.04
+* add svcs command
+
 ## 20250407.1 - 2025-07-18
 
 * use latest debian 12 image

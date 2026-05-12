@@ -1,7 +1,7 @@
 {
   "name":         "qutic-lx-base",
-  "version":      "20250407.1",
-  "description":  "qutic lx-debian12 image",
+  "version":      "20250407.2",
+  "description":  "qutic lx-base image",
   "organization": "qutic development",
   "brand":        "Instance",
   "homepage":     "https://github.com/jfqd/mi-qutic-lx-base",
