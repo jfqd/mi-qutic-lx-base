@@ -98,6 +98,18 @@ systemctl stop rpcbind
 systemctl stop rpcbind.socket
 systemctl disable rpcbind
 
+echo "* Fix rsyslog config"
+sed -i \
+  -e "s/\$FileOwner syslog/#\$FileOwner syslog/" \
+  -e "s/\$FileGroup adm/#\$FileGroup adm/" \
+  -e "s/\$FileCreateMode 0640/#\$FileCreateMode 0640/" \
+  -e "s/\$DirCreateMode 0755/#\$DirCreateMode 0755/" \
+  -e "s/\$Umask 0022/#\$Umask 0022/" \
+  -e "s/\$PrivDropToUser syslog/#\$PrivDropToUser syslog/" \
+  -e "s/\$PrivDropToGroup syslog/#\$PrivDropToGroup syslog/" \
+  /etc/rsyslog.conf
+systemctl restart rsyslog
+
 # journalctl --vacuum-size=200M
 sed -i \
   -e "s/#SystemMaxUse=/SystemMaxUse=200M/" \
