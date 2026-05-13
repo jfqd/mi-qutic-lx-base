@@ -18,6 +18,8 @@ apt-get -y update
 apt-get -y install zabbix-agent || true
 mkdir -p /var/log/zabbix || true
 chown zabbix:zabbix /var/log/zabbix
+mkdir -p /run/zabbix/
+chown zabbix:zabbix /run/zabbix/
 mkdir -p /etc/zabbix/zabbix_agentd.conf.d || true
 rm -rf "zabbix-release_latest_6.0+ubuntu24.04_all.deb" || true
 
